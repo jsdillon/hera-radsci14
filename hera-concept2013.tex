@@ -31,6 +31,8 @@
 \def\HI{{H{\small I }}}
 \def\HII{{H{\small II }}}
 \def\xHI{{x_{\rm\HI}}}
+\def\arcdeg{{$^o$}}
+\def\arcmin{{$''$}}
 \begin{document}
 
 \linenumbers
@@ -78,6 +80,14 @@
 
 %% These dates will be inserted by the Publication Production Office during the typesetting process.
 
+% Intro
+% Background
+% Scientific Motivation
+% Specifications
+% System Overview
+% Data Processing
+% Site?
+% Conclusion
 
 \firstpage{1}
 
@@ -424,7 +434,7 @@ within the wedge, and to specify the sensitivity needed to obtain
 high-significance detections of the 21~cm reionization power spectrum under the
 conservative assumption that all foreground-dominated wavemodes within the
 wedge must be projected out of our measurements.
-As summarized in Table \ref{tab:signif} (see \Mycitealt{pober_et_al2014} for more details),
+As summarized in Table \ref{tab:signif} (see \citealt{pober_et_al2014} for more details),
 based on these assumptions, current instruments are likely to achieve,
 at best, only marginal detections of power from reionization.
 
@@ -484,18 +494,18 @@ bound the HERA design.  The basic parameters are given in Table \ref{tab:BasicPa
 %%\centering
 %%	\begin{subfigure}[b]{0.46\textwidth}
 %%		\includegraphics[width=\textwidth]{plots/paper_element.jpg}
-%%		\Caption{-0.2in}{0.99}{-0.2in}{The PAPER element (provides a clean instrumental response as a function
+%%		\caption{-0.2in}{0.99}{-0.2in}{The PAPER element (provides a clean instrumental response as a function
 %%		of frequency \citep{parsons_et_al2010,parsons_et_al2012b}, which is crucial to
 %%		the foreground isolation shown in Figure \ref{fig:eor_pspec}.}
 %%	\end{subfigure}
 %%	\quad
 %%	\begin{subfigure}[b]{0.46\textwidth}
 %%		\includegraphics[height=1.75in]{plots/hera_dish.png}
-%%		\Caption{-0.2in}{0.99}{-0.2in}{A 14m dish designed around the feed dramatically improves sensitivity while
+%%		\caption{-0.2in}{0.99}{-0.2in}{A 14m dish designed around the feed dramatically improves sensitivity while
 %%		constraining the path length and amplitude of reflections to ensure that foreground 
 %%		isolation is not substantially degraded.}
 %%	\end{subfigure}
-%%\Caption{-0.2in}{0.99}{-0.2in}{PAPER and HERA elements}
+%%\caption{-0.2in}{0.99}{-0.2in}{PAPER and HERA elements}
 %%\label{fig:hera_dish}
 %%\end{figure}
 %
@@ -553,7 +563,7 @@ Since the time it takes radio emission to propagate between adjacent antennas
 represents a significant portion of this time budget, HERA elements must be placed close together.
 Recent work characterizing foregrounds suggests that 
 antenna separations of $8\lambda \approx 15$m are
-well-behaved to current limits \Mycitep{pober_et_al2013,parsons_et_al2013}. This influences our
+well-behaved to current limits \citep{pober_et_al2013,parsons_et_al2013}. This influences our
 choice of a 14-m dish diameter,
 which incurs 42 ns of signal delay between adjacent antennas.
 The focal height (4.5 m) derives from the illumination pattern of the prime-focus
@@ -724,9 +734,9 @@ This configuration minimizes antenna separation, which is critical for meeting
 the science requirements for foreground isolation, and 
 produces a highly redundant sampling of the $uv$ plane.  As described in
 \S\ref{sec:Lessons}, redundant configurations have been employed by PAPER to
-boost sensitivity \Mycitep{parsons_et_al2012a}, with the added benefit that they
+boost sensitivity \citep{parsons_et_al2012a}, with the added benefit that they
 greatly facilitate fast and accurate calibration
-\Mycitep{liu_et_al2010,parsons_et_al2013}.  Placing HERA elements in a
+\citep{liu_et_al2010,parsons_et_al2013}.  Placing HERA elements in a
 grid allows certain construction components to be re-used between antennas,
 reducing cost and improving the accuracy of element placement.  HERA-331 
 is a build-out of HERA-127 from the eastern edge.
@@ -753,7 +763,7 @@ In keeping with a philosophy of
 incremental change,
 HERA-127 reuses the tested and commissioned feed, LNA, cables, and post-amplifier gain modules
 (Fig. \ref{fig:components}, left and center) that are currently being
-used to good effect in PAPER-128 \Mycitep{parsons_et_al2010}.  Existing PAPER feeds are attached to new
+used to good effect in PAPER-128 \citep{parsons_et_al2010}.  Existing PAPER feeds are attached to new
 reflector screens that are suspended over the elements, but otherwise remain unmodified.
 A parallel development effort in NRAO aims to improve the feed response below
 100 MHz 
@@ -772,19 +782,19 @@ the transition to the HERA-331 system.
 
 \begin{figure}[t]\centering
 \includegraphics[width=6.5in]{plots/casper_boards.jpg}
-\Caption{-0.3in}{0.99}{-0.15in}{\small
+\caption{-0.3in}{0.99}{-0.15in}{\small
 Five generations of CASPER technology (progressing left to right) have been used to rapidly
 develop, test, and deploy digital instrumentation for radio astronomy.  This technology
 allows the PAPER correlator to be 
 easily upgraded for HERA, incorporating new technology
-\Mycitep{parsons_et_al2006,parsons_et_al2008}.
+\citep{parsons_et_al2006,parsons_et_al2008}.
 }\label{fig:casper_boards}
 \end{figure}
 
 %HERA's digital system continues in the vein of PAPER's digital correlators.
 Although correlators have historically been one of the most complex,
 expensive, and risky aspects of developing a radio interferometer, this is no longer the case.
-CASPER \Mycitep{parsons_et_al2006}
+CASPER \citep{parsons_et_al2006}
 open-sourced the development of digital signal processing engines for astronomy and
 now has world-wide participation,
 with over 500 members at 73 institutions, and 
@@ -793,7 +803,7 @@ On a modest budget, PAPER has applied CASPER technology to develop and deploy ne
 annually for five years running, each quadrupling the computational capacity of its predecessor.
 Led at UC Berkeley's Radio Astronomy Lab (RAL),
 HERA efforts continue this incremental development cycle, following a packet-switched
-correlator architecture \Mycitep{parsons_et_al2008} that has been
+correlator architecture \citep{parsons_et_al2008} that has been
 extended in recent PAPER and LEDA deployments (Fig. \ref{fig:components}, right)
 to leverage the computing strengths of both FPGAs and GPUs \citep{clark_et_al2011}.
 
@@ -871,7 +881,7 @@ and analysis pipelines, and transferring data products to
 a high-performance computing cluster at UPenn.
 UPenn leads the procurement
 and deployment of three data storage systems:
-\begin{itemize}[noitemsep,nolistsep]
+\begin{itemize}%[noitemsep,nolistsep]
 \item a 1.5 PB system deployed in the KAPB for archiving all 1.2 PB of raw data and 60 TB of compressed data, 
 \item 6 network attached storage (NAS) units plus 2 125 TB RAID array units that are used to ship compressed data products to the US, and
 \item a permanent 250 TB system at UPenn associated with a computing cluster that
@@ -884,11 +894,11 @@ for the expansion of the data storage and for upgrading to a 30-node computing c
 %The main data center at Penn will house all of the maximally compressed data from all seasons of HERA, as well as the LST-averaged data.  The storage system is sized so that there is a factor of 4 overhead for work on the maximally-compressed data set, and a factor of 2 on the LST-averaged. The 500 TB data storage will be coupled to a 32-node cluster which performs the tasks of calibration and averaging to further reduce the data volume.  This cluster will support the bulk of the analysis requiring the full data set.  Subsets will be served off to collaborators from this system.  The entire data storage and transfer plan for HERA draws heavily on the experience with PAPER data.
 
 The data compression scheme at the heart of the data management system
-has been implemented for PAPER (\Mycitealt{parsons_et_al2013},
+has been implemented for PAPER (\citealt{parsons_et_al2013},
 Appendix A), and is applied to HERA visibilities to reduce data volume by
 a factor of $\sim$20 without impacting reionization science
 capabilities.  This compression technique, which is based on delay/delay-rate
-filtering \Mycitep{parsons_backer2009}, is applied uniformly to all visibilities
+filtering \citep{parsons_backer2009}, is applied uniformly to all visibilities
 in the array, does not require (or produce) detailed calibration
 information, and is minimally restrictive for how data are analyzed and calibrated afterward.
 Data compression is run on the same GPU servers
@@ -918,7 +928,7 @@ NAS devices and RAID storage, transferred by air-freight shipping, ensure full d
 \label{sec:monitor}
 
 The U. of Washington team leads the development of HERA's Monitor and Control (M\&C) system,
-which is a straightforward port of a similar system used on the MWA \Mycitep{tingay_et_al2013}.
+which is a straightforward port of a similar system used on the MWA \citep{tingay_et_al2013}.
 This system is
 responsible for tracking observing status, array startup and shutdown, and
 monitoring all active HERA systems. In the process, the M\&C system builds a sizeable database of 
@@ -982,14 +992,14 @@ corrects any remaining leakage effects.
 
 {\bf Foreground Modeling}. The U. Washington team leads the adaptation
 of a high dynamic-range imaging pipeline
-based on the Fast Holographic Deconvolution (FHD; \Mycitealt{sullivan_et_al2012}).
+based on the Fast Holographic Deconvolution (FHD; \citealt{sullivan_et_al2012}).
 for HERA.  The full-Stokes sky maps resulting from this pipeline
 are used to directly subtract foregrounds
 and as data products themselves.  UPenn leads
 the characterization of the polarized sky and the
 distribution of rotation measures.  Data from HERA, PAPER, and the MWA are used
 to update source catalogs and a Global
-Sky Model \Mycitep{deoliveira2008}. %providing reference sky models for both
+Sky Model \citep{deoliveira2008}. %providing reference sky models for both
 %HERA and other low-frequency instruments. %The goal will be to generate a model
 %suitable for direct subtraction of foregrounds. 
 
@@ -1007,9 +1017,9 @@ delay-spectrum approach used in PAPER.  %This
 Development of
 the power-spectrum pipeline will focus on incorporating
 a fully covariant description of the foreground wedge
-\Mycitep{liu_tegmark2011,dillon_et_al2013a}, as well as
+\citep{liu_tegmark2011,dillon_et_al2013a}, as well as
 exploring Bayesian techniques for power spectrum estimation, building on the considerable
-progress already made on Gibbs-sampling imaging for interferometers \Mycitep{sutter_et_al2014}.
+progress already made on Gibbs-sampling imaging for interferometers \citep{sutter_et_al2014}.
 In addition to the statistical foreground mitigation techniques provided by optimal quadratic
 power-spectrum estimation, U. Washington leads the application of 
 foreground modeling for expanding the range of modes available for power spectrum analysis.
@@ -1144,19 +1154,20 @@ TEXT
 \end{acknowledgements}
 
 
+\bibliographystyle{copernicus}
+\bibliography(biblio)
 
-
-\begin{thebibliography}{}
-
-\bibitem[AUTHOR(YEAR)]{LABEL}
-REFERENCE 1
-
-\bibitem[AUTHOR(YEAR)]{LABEL}
-REFERENCE 2
-
-...
-
-\end{thebibliography}
+%\begin{thebibliography}{}
+%
+%\bibitem[AUTHOR(YEAR)]{LABEL}
+%REFERENCE 1
+%
+%\bibitem[AUTHOR(YEAR)]{LABEL}
+%REFERENCE 2
+%
+%...
+%
+%\end{thebibliography}
 
 
 %% Literature citations
@@ -1219,7 +1230,7 @@ a departure from adiabatic cooling presumed to be indicative of X-ray heating.
         \includegraphics[height=1.5in]{plots/new_antenna_closeup.jpg}
         \includegraphics[height=1.5in]{plots/Engineering/recv_node.png}
         \includegraphics[height=1.5in]{plots/Engineering/digital.png}
-    \Caption{-0.1in}{0.99}{-0.1in}{\small
+    \caption{-0.1in}{0.99}{-0.1in}{\small
     Existing components re-used in the HERA design include:
     the PAPER dipole antenna (left), 
     receivers in a node module (center), and
@@ -1290,7 +1301,7 @@ a departure from adiabatic cooling presumed to be indicative of X-ray heating.
 %\bottomhline
 %\end{tabular}
 %\end{table}
-\begin{table}[t]
+\begin{table*}[t]
 \small
  \centering
  \begin{tabular}{c||r||r|r} 
@@ -1309,23 +1320,22 @@ LOFAR NL Core & 35,762 & 2.76 & 17.37 \\
 SKA1 Low Core & 833,190 & 97.92 & 284.85 \\
 %\enddata
 \end{tabular}
-\Caption{-0.1in}{0.99}{-0.1in}{Power spectrum signal-to-noise (``number of sigmas") at $z=9.5$ for various instruments, adapted from \Mycitet{pober_et_al2014}.  By leveraging a filled, redundant configuration of dishes with high collecting area, HERA-331 allows high-significance power spectrum measurements using current foreground avoidance techniques, with further enhancements possible with likely advances in foreground modeling.}
+\caption{Power spectrum signal-to-noise (``number of sigmas") at $z=9.5$ for various instruments, adapted from \citet{pober_et_al2014}.  By leveraging a filled, redundant configuration of dishes with high collecting area, HERA-331 allows high-significance power spectrum measurements using current foreground avoidance techniques, with further enhancements possible with likely advances in foreground modeling.}
 \label{tab:signif}
-\end{table}
+\end{table*}
 
+Print this is some text in between.
 
-\begin{table}[t]
+\begin{table*}[t]
 \small
-\begin{center}
+%\begin{center}
 % \begin{deluxetable}{lcc}
 % \tabletypesize{\small}
 % \tablecaption{HERA-331 basic parameters.}
 % \tablehead{\colhead{Parameter} & \colhead{Design} & \colhead{Performance at 150 MHz}}
 %    \startdata
-\begin{tabular}{l | c | c}
-\hline
-Parameter & Design & Performance\\
-\hline
+\begin{tabular}{l | c | c} \hline
+Parameter & Design & Performance\\  \hline
     Element diameter / FoV & 14 m & 9\arcdeg \\ 
     %Total collecting area & 54186 m$^2$ \\
     Min baseline length / largest scale & 14.6 m & 7.8\arcdeg \\
@@ -1347,12 +1357,12 @@ Parameter & Design & Performance\\
 %    \hline
  %\end{deluxetable}
 \end{tabular}
-\Caption{-0.1in}{0.99}{-0.4in}{HERA-331 basic parameters.  Design parameters are connected to the derived instrument performance at 150 MHz.}
+\caption{HERA-331 basic parameters.  Design parameters are connected to the derived instrument performance at 150 MHz.}
 \label{tab:BasicParameters}
 \vspace{.2in}
 %\end{deluxetable}
-\end{center}
-\end{table}
+%\end{center}
+\end{table*}
 
 
 
