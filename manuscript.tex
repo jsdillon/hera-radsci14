@@ -1,8 +1,9 @@
 % Template file for ICEAA13
 %
 \RequirePackage{ifpdf}
-\documentclass{ICEAA-IEEE_APWC}
+\documentclass{article}
 \usepackage{multirow}
+\usepackage{graphicx}
 
 \newcommand{\kvec}{{\bf k}}
 \newcommand{\bvec}{{\bf b}}
@@ -68,16 +69,15 @@
 % If the authors have the same affiliation, use \thanks[n] to
 % refer to the same affiliation of the n:th \thanks command
 \author{D. R. DeBoer\thanks{Radio Astronomy Laboratory, University of California, Berkeley, CA 94720, USA, e-mail: ddeboer@berkeley.edu}, 
-on behalf of the HERA collaboration
+team of dozens.
 }
 \begin{document}
 \maketitle
 
 
-\begin{abstract}
+\section{abstract}
+\label{sec:abstract}
 The Hydrogen Epoch of Reionization Array (HERA http://reionization.org) is a staged experiment that uses the unique properties of the 21-cm line from neutral hydrogen to probe the Epoch of Reionization (EOR). During this epoch, roughly 0.3 - 1 billion years after the Big Bang, the first galaxies and black holes heated and reionized the early Universe. Direct observation of the large scale structure of reionization and its evolution with time will have a profound impact on our understanding of the birth of the first galaxies and black holes, their influence on the intergalactic medium (IGM), and cosmology.  This paper will provide an overview of the project and describe the design of the HERA receiving element.
-
-\end{abstract}
 
 \section{Introduction}
 \label{sec:intro}
@@ -92,9 +92,8 @@ Detecting, characterizing and ultimately imaging the Epoch of Reionization is a 
 The Hydrogen Epoch of Reionization Array (HERA http://reionization.org) is a staged experiment that uses the unique properties of the 21-cm line from neutral hydrogen to probe the EOR, roughly 0.3 - 1 billion years after the Big Bang. Direct observation of the large scale structure of reionization and its evolution with time will have a profound impact on our understanding of the birth of the first galaxies and black holes, their influence on the intergalactic medium (IGM), and cosmology.
 
 \begin{figure}[t]
-\centerline{
-\includegraphics[width=7.5cm]{hera331_Bpers.png} }
-\caption{\small Perspective cartoon of the 331-element core within a 305-meter circle.
+\includegraphics[width=7.5cm]{hera331_Bpers.png}
+\caption{Perspective cartoon of the 331-element core within a 305-meter circle.
 \label{fig:config}}
 \end{figure}
 
@@ -102,14 +101,14 @@ HERA has been funded under the US National Science Foundation's Mid-Scale Innova
 
 Beginning with the current NSF funding, HERA will rollout in a staged deployment.  The first phase extending to August 2016 will deploy 37 elements that will test the HERA element design for performance and manufacturability at location.  These 37 elements will more than double the sensitivity of the 128-element PAPER array.  The next phase extending into 2018 will build out to 127 elements, which should provide a very robust detection of the EOR signal.  Finally, extending into 2020, HERA will build out to 352 elements to further EOR science as a function of redshift and spatial scale, potentially producing the first images of the EOR.
 
-HERA is a collaboration of the following partner institutions:  Arizona State University, University of California Berkeley, University of California Los Angeles, University of Cambridge, University of KwaZulu Natal, Massachusetts Institute of Technology, National Radio Astronomy Observatory, University of Pennsylvania, SKA-South Africa, and
+HERA is a collaboration of the following partner institutions:  Arizona State University, Brown University, University of California Berkeley, University of California Los Angeles, University of Cambridge, Massachusetts Institute of Technology, National Radio Astronomy Observatory, University of Pennsylvania, SKA-South Africa, and
 University of Washington.
 
 \section{Measuring the EOR}
 \label{sec:eormeas}
-Due to the expansion of the Universe, we can identify and measure the early Universe via the red-shift of spectral lines.  The hydrogen hyperfine transition at a rest frequency of 1420 MHz is a key spectral line due to the ubiquity of hydrogen and, being a ``forbidden'' transition, the optical depth lets us see through the entire Universe back almost to the period of recombination.  Frequency therefore equates to a volume along the site of the telescope as well as in dating when the event occurred. 
+Due to the expansion of the Universe, we can identify and measure the early Universe via the red-shift of spectral lines.  The hydrogen hyperfine transition at a rest frequency of 1420 MHz is a key spectral line due to the ubiquity of hydrogen and, being a ``forbidden'' transition, the optical depth lets us see through the entire Universe back almost to the period of recombination.  Frequency therefore equates to a cosmic volume along the site of the telescope, as well as in dating when the event occurred. 
 
-Initial measurements of the EOR strive to measure a statistical power spectrum of the signal since the nature of the reionization process should have a specific spatial signature.  The goal is therefore to measure a range of aggregate spatial scales on the sky, rather than to image the signal directly.  Imaging does remain an ultimate goal to fully understand the process, however we will need a greater understanding of its properties to achieve this more difficult goal.  
+Initial measurements of the EOR strive to measure a statistical power spectrum of the signal since the nature of the reionization process should have a specific spatial signature.  The goal is therefore to measure a range of aggregate spatial scales on the sky, rather than to image the signal directly.  Imaging does remain an ultimate goal to fully understand the process, however we will need a greater understanding of its properties to achieve this more difficult goal.  There are now numerous papers in the literature the technique of measuring the power spectrum using an interferometer and the attendant issues (list of citations).  Below, a high-level overview based on [parsons12b] will be presented.
 
 Given that the response of an interferometer natively measures the power in Fourier modes of the sky within its beam, we see that it is a natural instrument to use for this measurement.  We can essentially relate the sky power spectrum mode ${\hat P}(\kvec)$ to an interferometer baseline visibility ${\tilde V}(\bvec)$, which is the equivalent of the (complex) fringe pattern in a double slit experiment (see {\em e.g.} \cite{2012ApJ...756..165P}):
 \begin{equation}
@@ -119,13 +118,17 @@ where $X$ and $Y$ are cosmological parameters relating angular size and spectral
 
 Though the desired measurement is over a 3-D volume, it is instructive to split it into two components,  $\kvec =  \kvpr + \kpar{\hat {\bf z}}$ where $\kpr$ is determined by the antenna baseline and $\kpar$ by the frequency.  This is useful since it allows us to split out the chromatic response of the interferometer and isolate a phase space where foreground sources ({\em i.e.} everything not the EOR) contaminate the signal of interest from where they don't.  This contaminated phase space may be shown to be a wedge-shaped region in $\kpr$:$\kpar$ space:
 \begin{equation}
-|\kpar| \le \frac{X\lambda}{Yc}\kpr + \frac{S}{Y}
+|\kpar| \le \beta\frac{X\lambda}{Yc}\kpr + \frac{S}{Y}
 \end{equation}
 where $c$ is the speed of light and $S$ is a parameter accounting for offsets related to the combined spectral smoothness of the foregrounds and the antenna response.  
 A key issue to measuring the EOR power spectrum is to understand and minimize such effects.  For an analytical derivation, see \cite{2012ApJ...756..165P,vedantham_et_al2012,liu_et_al2014b},  in simulation see \cite{datta_et_al2010,hazelton_et_al2013} and for observations
 \cite{2013ApJ...768L..36P,2015arXiv150601026P,2014ApJ...788..106P,2015arXiv150206016A}.
 
-\section{HERA System}
+\section{Specifications}
+\label{sec:specs}
+Based on the discussion above, we see that 
+
+\section{HERA System Overview}
 \label{sec:system}
 HERA will operate between 70 MHz and 220 MHz, however the first phases (up to 127 elements) will operate within the current PAPER bandwidth of 110-190 MHz.  The full band is directly sampled and correlated, making for a very simple signal path requiring only gain.  Initially, the exact PAPER signal chain will be used, which brings the RF back to a central container on coaxial cable where it is digitized and processed.  A new modular digitizer (Smart Network ADC Processor, or SNAP) has been developed that will be deployed in the field and will shorten the amount of RF cable.  The digitized signal will be conveyed back to a central building for processing via 10 Gbit ethernet over fiber-optic cable.   The SNAP board is being developed as part of the CASPER suite of hardware components (https://casper.berkeley.edu/wiki/DAB-HERALD).  A simple block diagram of the two-phase system is shown in Fig. \ref{fig:system}.
 
@@ -156,7 +159,7 @@ The configuration is optimized for power spectrum detections, which favors as la
 %always be in upright font.\label{tab:sensitivity}}
 %\end{table}
 
-\section{HERA Element}
+\subsection{HERA Element}
 \label{sec:element}
 The design of the HERA element is discussed in \cite{heraMemo5}.  The design principles are three-fold:
 \begin{itemize}
