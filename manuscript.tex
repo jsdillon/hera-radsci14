@@ -242,7 +242,8 @@ The minimum baseline is set such that the baseline has negligible impact on the 
 \label{fig:costfig}}
 \end{figure}
 
-\subsection{Sensitivity:  Diameter, Number, and Configuration}
+\subsection{Sensitivity and Cost:  Diameter, Number, and Configuration}
+\label{sec:cost}
 What is our requirement?
 
 sensitivity - reionization fraction 10$\sigma$ from 0.2-0.8?
@@ -256,14 +257,16 @@ sensitivity - reionization fraction 10$\sigma$ from 0.2-0.8?
 \includegraphics[width=.3\textwidth]{plots/HERA_sensitivity.pdf}
 }
 \caption{\small Sensitivity
-\label{fig:sensivity}}
+\label{fig:sensitivity}}
 \end{figure}
 
-\subsection{Cost}
-\label{sec:cost}
-
-
-
+To determine the optimal diameter, full system costings were done on a range of diameter sizes from 5m - 25m, where the total number was constrained to keep constant sensitivity for this measurement, which is shown in Figure \ref{fig:costfig}.  This included the full system, except the post-processing.  By assuming canonical values of 331 14-meter antennas, the number of elements needed for a given diameter to match the sensitivity is
+\begin{equation}
+N_a = 4634/D_a
+\end{equation}
+where $N_a$ and $D_a$ are the number of antennas and their diameter respectively.  Note that the number-diameter dependence was derived by running multiple sensitivity codes ({\em e.g.} Pober) over a range of values for the HERA configuration.  This dependency differs from Mellema, mostly likely due to the assumed configuration.
+Figure \ref{fig:costfig} shows the resulting normalized system cost/performance-curve as the horizontal shading relative to the canonical HERA design 
+which becomes very flat (colored purple) for diameters greater between about 12 and15 m, which is consistent with the chosen value of 14 meters based on other system considerations.
 
 \section{HERA System Overview}
 \label{sec:system}
@@ -309,23 +312,13 @@ The configuration is optimized for power spectrum detections, which favors as la
 
 \subsection{Element and Analog Signal Path}
 \label{sec:element}
-The design of the HERA element is discussed in \cite{heraMemo5}.  The design principles are three-fold:
+As discussed in the previous section, the design of the design principles are three-fold:
 \begin{itemize}
 \item optimize for the delay-spectrum technique of measuring the EOR power spectrum,
 \item minimize costs, and
 \item the experiment has a limited lifetime of about five years.
 \end{itemize}
-The first item primarily means that chromatic effects corresponding to delays appropriate for the measurement described above must be below the expected signal level, which essentially determines the focal length.  The second item constrains the diameter and element count, as well as the focal length over diameter ratio ($f/D$), based on a cost function and maximizing sensitivity per element.  And the third items constrains the construction materials and methods and the operational model.
-
-
-
-To determine the optimal diameter, full system costings were done on a range of diameter sizes from 5m - 25m, where the total number was constrained to keep constant sensitivity for this measurement, which is shown in Figure \ref{fig:costfig}.  By assuming canonical values of 331 14-meter antennas, the number of elements needed for a given diameter to match the sensitivity is
-\begin{equation}
-N_a = 4634/D_a
-\end{equation}
-Figure \ref{fig:costfig} shows the resulting normalized system cost/performance-curve, which becomes quite flat for diameters greater than about 14m, which also happens to be the diameter where two reflections between the feed and vertex coincide with the 60 ns specification.  An addition high-level analysis of reflection coefficients within the structure also indicate that a diameter of less than 15 meters is preferred.  The diameter of 14 meters was therefore chosen for the element.
-
-A full-sized prototype of this system was built and measured using a network analyzer in time-domain mode, which meets the ``60 by 60 '' specification (Fig \ref{fig:refl}). (\cite{heraMemo5}).
+The first item primarily means that chromatic effects corresponding to delays appropriate for the measurement described above must be below the expected signal level, which essentially determines the focal length.  The second item constrains the diameter and element count, as well as the focal length over diameter ratio ($f/D$), based on a cost function and maximizing sensitivity per element.  And the third items constrains the construction materials and methods and the operational model.  This led to an element diameter of 14 meters.
 
 \begin{figure}[t]
 \centerline{
