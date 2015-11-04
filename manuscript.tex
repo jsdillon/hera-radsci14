@@ -128,7 +128,7 @@ A key issue to measuring the EOR power spectrum is to understand and minimize su
 \cite{2013ApJ...768L..36P,2015arXiv150601026P,2014ApJ...788..106P,2015arXiv150206016A}.
 
 \begin{figure}[t]
-\includegraphics[width=\textwidth]{plots/wedge.png}
+\includegraphics[height=3in]{plots/wedge.png}
 \caption{Cartoon of the wedge.  The gray rectangle represents the smooth-spectrum foregrounds as they would be if the instrument had a perfect achromatic response.  The pink wedge area shows the chromatic response of the interferometer, where additional power is thrown up from the gray region to higher k-values with increasing baseline.  The additional horizontal pink line illustrates the affect that other systematics, such as reflections on cables, can have in contaminating the measurement.  The white region shown the 'eor window', where the measurement is not contaminated by foregrounds or systematics.
 \label{fig:wedge}}
 \end{figure}
@@ -137,7 +137,7 @@ The techniques to measure the power spectrum may be broken down into two princip
 
 \subsection{Delay-Spectrum Approach}
 \label{sec:delayapproach}
-Given that the response of an interferometer natively measures the power in Fourier modes of the sky within its beam, we see that it is a natural instrument to use for this measurement.  There are now numerous papers in the literature the technique of measuring the power spectrum using an interferometer and the attendant issues (list of citations).  Below, a high-level overview based on  \cite{2012ApJ...756..165P} will be presented. The so-called delay-spectrum approach leverages this response to optimize sensitivity to the desired modes while rejecting modes contaminated by the foreground power in the wedge.  Other than handling overlapping bins in {\em uv} space, the delay-spectrum approach does not combine baselines before squaring and calculating the power spectrum.
+Given that the response of an interferometer natively measures the power in Fourier modes of the sky within its beam, we see that it is a natural instrument to use for this measurement.  There are now numerous papers in the literature the technique of measuring the power spectrum using an interferometer and the attendant issues (list of citations).  Below, a high-level overview based on  \cite{2012ApJ...756..165P} will be presented. The so-called delay-spectrum approach leverages this response to optimize sensitivity to the desired modes while rejecting modes contaminated by the foreground power in the wedge.  Other than potentially handling overlapping bins in {\em uv} space, the delay-spectrum approach does not combine baselines before squaring and calculating the power spectrum.
 
 We can essentially relate the sky power spectrum mode ${\hat P}(\kvec)$ to an interferometer baseline visibility ${\tilde V}(\bvec)$, which is the equivalent of the (complex) fringe pattern in a double slit experiment:
 \begin{equation}
@@ -209,15 +209,15 @@ after marginalizing over astrophysical and cosmological parameters.
 
 From these measurements and models, the Phase 1 and 2 minimum spans of redshifts range from $z=$6 to 13, corresponding to a frequency range of 100 - 200 MHz.  Extending the science to include the Dark Ages remains a goal so that efforts are on-going to design a feed to increase the lower limit down to about 50 MHz without compromising the performance in the specification range.  The fall-back position for the low-frequencies is a serial deployment of a scaled version of the HERA feed or to potentially build additional elements specifically for the low-frequencies.  The 100 MHz bandwidth is also the minimum fully digitized and correlated bandwidth.
 
-The scientific requirement on channel bandwidth is to allow access to k-modes of XXX 5? h/Mpc [ref], which is easily accomplished by as few as 64 channels over the 100 MHz bandwidth.  However, in order to handle radio frequency interference as well as to allow the bandwidth to be characterized a specification of 1024 channels has been set.  This yields a channel bandwidth of 97.7 kHz.
+The scientific requirement on channel bandwidth is to allow access to k-modes of greater than 1 h/Mpc [ref], which requires about 256 channels over the 100 MHz bandwidth.  However, in order to handle radio frequency interference as well as to allow the bandpass to be characterized, a specification of 1024 channels has been chosen.  This yields a channel bandwidth of 97.7 kHz.
 
 
 \subsection{Spatial/Delay Response}
 The spatial response provides the defining characteristics for the experiment; related to the diameter, focal length, baseline, and configuration.  The principal constraint sets the delay response of the antenna element, characterized by the magnitude and frequency of the antenna ripple response.  This was initially addressed to first order in [MEMO] and in a much more detailed way in [UPCOMING PAPERS].  Expressed simply, the delay response of the antenna must be sufficiently attenuated such that the foreground signal levels at those delays is below the expected signal strength of the EOR signal.  This sets the optics and match needs.  As discussed in [REFS], this is addressed by direct measurement and modeling of the response to the system relative to and as a function of delay time from the initial wave reception.  The expected strength of the foregrounds is modeled through the system and plotted on the same set of axes.  These two regions should be disjoint to a significance of 60 dB.
 
-The minimum baseline is set such that the baseline has negligible impact on the minimum baseline (shown in Fig. \ref{fig:kperf} in the standard analysis.  Somewhat arbitrarily, a maximum shortest baseline with equal contribution to $k_{min}$ at the full bandwidth of 100 MHz is chosen, which corresponds to about 15m.  Additionally, this baseline has been well-studied by the PAPER array (ref).
+The minimum baseline is set such that the baseline has negligible impact on the minimum $k_{bin}$ (shown in Fig. \ref{fig:kperf}) in the standard analysis.  Somewhat arbitrarily, a maximum shortest baseline with equal contribution to $k_{min}$ at the full bandwidth of 100 MHz is chosen, which corresponds to about 15m.  Additionally, this baseline has been well-studied by the PAPER array (ref).
 
-The above requirements also drive the specification on the element diameter, as well as the desire to maximize sensitivity.  This means that the diameter should be something around 15m (that is, a fully filled aperture for the minimum baseline) with a short focal length.  
+The above requirements also drive the specification on the element diameter, as well as the desire to maximize sensitivity.  This means that the diameter should be something around 15m (that is, a fully filled aperture for the minimum baseline) with a short focal length.  This is revisited in Sec \ref{sec:cost}.
 
 \subsection{Sensitivity}
 sensitivity - reionization fraction 10$\sigma$ from 0.2-0.8
@@ -233,6 +233,7 @@ sensitivity - reionization fraction 10$\sigma$ from 0.2-0.8
 \end{figure}
 
 \subsection{Cost}
+\label{sec:cost}
 \begin{figure}[t]
 \centerline{
 \includegraphics[width=7.5cm]{plots/costfigNew.png} 
@@ -329,6 +330,13 @@ A full-sized prototype of this system was built and measured using a network ana
 
 \subsection{Configuration}
 \label{sec:config}
+\begin{figure}[t]
+\centerline{
+\includegraphics[width=7.5cm]{plots/config.png} 
+}
+\caption{\small Config
+\label{fig:config}}
+\end{figure}
 
 \subsection{Calibration}
 
