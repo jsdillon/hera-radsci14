@@ -1,0 +1,21 @@
+kmin.png from Code/cosmo/fitCosmo.py
+system.graffle copied over from projectbook/architecture
+
+see notebook pg 55
+1 - herauniall
+2 - fitCosmo - kperf_heraZ.png
+3 - beam pattern NOT IN YET
+4 - ??Delay foreground?? (dish paper?)
+5 - block diagram - sysOver (ProjectBook/architecture)
+6 - architectural diagram - (HERA_high_level_block_diagram)
+7 - ??observed chunk of sky - EOR
+8 - wedge cartoon - wedge.py under plots
+9 - costfig
+10 - picture of element(s)/full array
+11 - uv coverages - config.png
+12 - sensitivity
+13 - Saul RFI plot  NOT IN YET
+
+Tables:
+- sensitivity of various instruments (see plot 12)
+- specs

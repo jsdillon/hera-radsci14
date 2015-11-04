@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+
+\newcommand{\kvec}{{\bf k}}
+\newcommand{\bvec}{{\bf b}}
+\newcommand{\shat}{{\hat s}}
+\newcommand{\kpr}{{k_\perp}}
+\newcommand{\kvpr}{{\kvec_\perp}}
+\newcommand{\kpl}{{k_\parallel}}
+\newcommand{\AI}{{\langle\tilde A*\tilde I\rangle}}
+\newcommand{\AItau}{{\AI(\tau)}}
+\newcommand{\hMpci}{{h~{\rm Mpc}^{-1}}}
+\newcommand{\inch}{$^{\prime\prime}$}
+\newcommand{\foot}{$^{\prime}$}
+\renewcommand{\deg}{^\circ}
+\begin{document}
+
+From Parsons {\em et al} 2012:
+
+\small
+\begin{equation}
+\label{eq:sensitivity}
+\Delta^2_N(k) \propto (k)^\frac{5}{2}
+                                         \left[\frac{1}{B}\right]^\frac{1}{2}
+                                         \left[\frac{1}{\Delta\ln k}\right]^\frac{1}{2} \\
+                           \Omega T_{sys}^2
+                                         \left[\frac{1}{t_{per\_day}}\right]^\frac{1}{2}
+                           \left[\frac{1}{t_{cam}}\right]
+                                         \left[\frac{1}{N_a}\right]
+                                         \left[\frac{f_o}{f}\right]^\frac{1}{2}
+\end{equation}
+where $k$ is the magnitude of the $k$-mode, $B$ is the bandwidth, $\Delta\ln k$ is the log
+of the binsize, $\Omega$ is the field-of-view, $T_{sys}$ is the system temperature, 
+${t_per\_day}$ is the number of hours observed per day, $t_{cam}$ is the number of days
+observed, $N_a$ is the number of antennas, and $f_o/f$ is a configuration metric for a 
+redundant array as therein defined.
+
+Pulling out terms relating to diameter ($D_a$) and number, we can write Eq. \ref{eq:sensitivity} as
+\begin{equation}
+\label{eq:reducedSensitivity}
+\Delta^2_N(k) \propto \frac{\Omega \sqrt{f_o/f}}{N_a\sqrt{t_{per\_day}}} \propto \frac{(1/D_a^2)(1/\sqrt{N_a})}{N_a\sqrt{D_a}}
+= \frac{1}{D_a^{\frac{5}{2}}N_a^{\frac{3}{2}}}
+\end{equation}
+where the dependencies on diameter and number have been substituted in, noting that the expressions for $f_o/f$ and 
+$t_per\_day$ were derived in Parsons et al where the baselines for the close-packed array are multiples of the diameter.
+
+From Mellema {\em et al} 2013:
+
+\begin{equation}
+\Delta^2_N(k) \propto k^\frac{3}{2}\sqrt{D_c^2\Delta D_c\Omega_{FOV}}\left[\frac{T_{sys}}{\sqrt{Bt_{int}}}\right]^2\left[\frac{A_{core}A_{eff}}{A^2_{coll}}\right]
+\end{equation}
+
+Pulling out similar $D_a$ and number terms:
+
+\begin{equation}
+\Delta^2_N(k) \propto \sqrt{\Omega} \left[ \frac{1}{t_{int}}  \right] \left[\frac{A_{core}A_{eff}}{A^2_{coll}}\right] \propto
+\left[\frac{1}{D_a}\right] \left[ \frac{1}{t_{int}}  \right] \left[\frac{(ND_a^2)(D_a^2)}{(ND_a^2)^2}\right] = \frac{1}{t_{int}}\frac{1}{ND_a^2}
+\end{equation}
+
+where, for hex packing
+\begin{equation}
+A_{core} \propto \left[\frac{4N-1}{3}D_a^2\right] \sim ND_a^2
+\end{equation}
+
+So, there is a factor of $\sqrt{ND_a}$ different.
+Allowing for incoherent drift-scanning, $t_{int} \rightarrow \sqrt{t_{int}} \sim 1/ \sqrt{D_a}$, so we are left with a $\sqrt{N}$ different, probably related to the specifics of $f_o/f$ and/or $A_{core}/A_{coll}^2$...
+
+Running Jonnie's code for 
+\begin{itemize}
+\item a bunch of diameters with 331 antennas (7-21 m)
+\item a bunch of elements for 14-m diameter (37-919)
+\end{itemize}
+ and evaluate at ks = 1, yields:
+\begin{equation}
+\Delta^2_N(1) \approx \frac{1}{D^{1.5}N^{1.5}}
+\end{equation}
+The exact coefficient is weakly dependent on the k-value in the middle k values.  The power laws fit better for larger k's (and are closer to 1.5).
+
+\end{document}
