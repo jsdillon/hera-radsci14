@@ -188,8 +188,12 @@ As the initial detection and analysis approach is primarily focused on the delay
 \begin{table}
 \label{tab:specs}
 \caption{Overview of requirements and specifications}
-\begin{tabular}{| l | l | c |}\hline
-Parameter & Value & Comments \\ \hline
+\begin{tabular}{| l | l | l | p{5cm} |}\hline
+{\bf Parameter} & {\bf Requirement} & {\bf Value} & {\bf Comments} \\ \hline
+Frequency range & 100 - 200 MHz & & Phase 1 \\ \hline
+Number of channels & $>$256 & 1024 & \\ \hline
+Diameter    & $<$ 14.1 m &  14.0 m & Picked near requirement for sensitivity/cost \\ \hline
+Shortest baseline & $<$ 15 m & 14.6 m & \\ \hline
 \end{tabular}
 \end{table}
 
@@ -220,17 +224,23 @@ From these measurements and models, the Phase 1 and 2 minimum spans of redshifts
 The scientific requirement on channel bandwidth is to allow access to k-modes of greater than 1 h/Mpc [ref], which requires about 256 channels over the 100 MHz bandwidth.  However, in order to handle radio frequency interference as well as to allow the bandpass to be characterized, a specification of 1024 channels has been chosen.  This yields a channel bandwidth of 97.7 kHz.
 
 
-\subsection{Spatial/Delay Response:  Diameter and Baselines}
+\subsection{Spatial/Delay Response:  Diameter and Minimum Baseline}
 The spatial response provides the defining characteristics for the experiment; related to the diameter, focal length, baseline, and configuration.  The principal constraint sets the delay response of the antenna element, characterized by the magnitude and frequency of the antenna ripple response.  This was initially addressed to first order in [MEMO] and in a much more detailed way in [UPCOMING PAPERS].  Expressed simply, the delay response of the antenna must be sufficiently attenuated such that the foreground signal levels at those delays is below the expected signal strength of the EOR signal.  This sets the optics and match needs.  As discussed in [REFS], this is addressed by direct measurement and modeling of the response to the system relative to and as a function of delay time from the initial wave reception.  The expected strength of the foregrounds is modeled through the system and plotted on the same set of axes.  These two regions should be disjoint to a significance of 60 dB.
 
 In order to do an initial design and a parametric study, the approach used first sets a specification on the magnitude of the feed/vertex reflections within the dish for 1, 2, and 3 round-trip travel delay times.  Reference \cite{heraMemo5} provides an initial estimate that the reflections must be down by 60 dB on timescales greater then 60 nanoseconds.  
 Also in ref \cite{heraMemo5}, an analysis using a feed pattern based on the existing PAPER dipole antenna with a fairly complete analytical model of a prime focus antenna, the effective area was found to be maximized for $f/D \approx 0.32$.  Figure \ref{fig:costfig} shows the vertex/feed round-trip travel times for one, two and three reflections.  
 
-Interpreting these delay lines in Fig \ref{fig:costfig} is somewhat confusing, but note that the vertical color scale represents a fairly steep cost function preferring delay time-scales of less than 60 ns (ignoring the horizontal color scale, to be discussed in Sec \ref{sec:cost}).  The preliminary study requirement is to ensure that reflections are down by about 60 dB by that time-scale.  As seen by the black dashed line labelled '1' for one round-trip between the feed and vertex, for the focal ratio and diameters of interest  this reflection is always less than 60 ns, so this does not constrain the design.  For two round-trips (black solid line labelled '2'), we see that for diameters greater than 14.1m, the delay is less than 60 ns, so diameters less than this are preferred.  For three round-trips, we see that we would need antennas with diameters smaller than 9.4m.  However, cost (sec. \ref{sec:cost) and practicality issues ({\em i.e.}physically moving within the filled array) make these small diameters undesirable, so this means that we need to ensure that our system has sufficiently damped reflections for 3 reflections.  This is discussed in detail in UPCOMING PAPERS.
+Interpreting Fig \ref{fig:costfig} is somewhat confusing, but note that the vertical color scale represents a fairly steep cost function preferring delay time-scales of less than 60 ns (ignoring the horizontal color scale for now, to be discussed in Sec \ref{sec:cost}).  The preliminary study requirement is to ensure that reflections are down by about 60 dB by that time-scale.  As seen by the black dashed line labelled '1' for one round-trip between the feed and vertex, for the focal ratio and diameters of interest  this reflection is always less than 60 ns, so this does not constrain the design.  For two round-trips (black solid line labelled '2'), we see that for diameters greater than 14.1m, the delay is less than 60 ns, so diameters less than this are preferred.  For three round-trips, we see that we would need antennas with diameters smaller than 9.4m.  However, cost (sec. \ref{sec:cost} and practicality issues ({\em i.e.}physically moving within the filled array) make these small diameters undesirable, so this means that we need to ensure that our system has sufficiently damped reflections for 3 reflections.  This is discussed in detail in UPCOMING PAPERS.  We have therefore adopted a specification that the antenna must be less than 14.1 meters in diameter.
 
-The minimum baseline is set such that the baseline has negligible impact on the minimum $k_{bin}$ (shown in Fig. \ref{fig:kperf}) in the standard analysis.  Somewhat arbitrarily, a maximum shortest baseline with equal contribution to $k_{min}$ at the full bandwidth of 100 MHz is chosen, which corresponds to about 15m.  Additionally, this baseline has been well-studied by the PAPER array (ref).
+The minimum baseline is set such that the baseline has negligible impact on the minimum $k_{bin}$ (shown in Fig. \ref{fig:kperf}) in the standard analysis.  Somewhat arbitrarily, a maximum shortest baseline with equal contribution to $k_{min}$ at the full bandwidth of 100 MHz is chosen, which corresponds to about 15m.  Additionally, this baseline has been well-studied by the PAPER array (ref) and is consistent with the diameter specification derived above.
 
-The above requirements also drive the specification on the element diameter, as well as the desire to maximize sensitivity.  This means that the diameter should be something around 15m (that is, a fully filled aperture for the minimum baseline).
+\begin{figure}[t]
+\centerline{
+\includegraphics[width=7.5cm]{plots/costfigNew.png} 
+}
+\caption{\small Costing model for a fixed sensitivity system as a function of diameter (thick blue line and left axis) as well as the round-trip delay for 1,2 and 3 feed-vertex trips (dashed red lines and right axis).  The 60 ns spec is indicated by the horizontal dash line, and the two-trip intersection at about 14-meter is the vertical dashed line.  SEE TEXT...
+\label{fig:costfig}}
+\end{figure}
 
 \subsection{Sensitivity:  Diameter, Number, and Configuration}
 What is our requirement?
@@ -251,13 +261,7 @@ sensitivity - reionization fraction 10$\sigma$ from 0.2-0.8?
 
 \subsection{Cost}
 \label{sec:cost}
-\begin{figure}[t]
-\centerline{
-\includegraphics[width=7.5cm]{plots/costfigNew.png} 
-}
-\caption{\small Costing model for a fixed sensitivity system as a function of diameter (thick blue line and left axis) as well as the round-trip delay for 1,2 and 3 feed-vertex trips (dashed red lines and right axis).  The 60 ns spec is indicated by the horizontal dash line, and the two-trip intersection at about 14-meter is the vertical dashed line.  SEE TEXT...
-\label{fig:costfig}}
-\end{figure}
+
 
 
 
